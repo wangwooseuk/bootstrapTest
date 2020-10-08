@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+</head>
+<body>
+	아이디:
+	<input type="text" name="name"/>
+	<br/>
+	<script>
+		$(function() {
+			$("input").focus(function() {
+				$(this).css("background-color", "yellow");
+			});
+			$("input").blur(function() {
+				$(this).css("background-color", "white");
+			});
+			$(document).keydown(function(e) {
+				console.log(e.code);
+			});
+		});
+	</script>
+</body>
+</html>
