@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	.sp {
+		display: none;
+ 	} 
+	.sp2 {
+		color: blue;
+     	font-weight: bold; 
+ 	} 
+	button {
+    	width: 100px;
+  	}
+</style>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+</head>
+<body>
+	<p>
+		<input type="text"> <span class="sp">focus fire</span>
+	</p>
+	<p>
+		<input type="password"> <span class="sp">focus fire</span>
+	</p>
+	
+	<div><button disabled="disabled">First</button> - <span class="sp2"></span></div>
+	<div><button>Second</button> - <span></span></div>
+	<div><button disabled="disabled">Third</button> - <span class="sp2"></span></div>
+
+	<script>
+		$(function() {
+			$("input").focusin(function() {
+				$(this).next().css({"display" : "inline",	"background" : "yellow"}).fadeOut(1000);
+				$(this).css("background", "pink");
+			});
+			$("input").focusout(function() {
+				$(this).css("background", "blue");
+			});
+			$( "button[disabled]" ).next().text( "this button is disabled" ).css("background", "yellow");
+		});
+	</script>
+</body>
+</html>
