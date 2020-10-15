@@ -28,6 +28,10 @@ button {
 	margin-bottom: 20px;
 }
 
+.picture {
+	height: 140px;
+}
+
 .picture>div {
 	position: relative;
 	float: left;
